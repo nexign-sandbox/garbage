@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Pack
-      run: dotnet nuget pack *.nupkg -o .
+      run: dotnet pack *.nupkg -o .
