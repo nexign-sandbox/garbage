@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Pack
-      run: dotnet "Публикация в NuGet.sln" pack -o .
+      run: dotnet pack "Публикация в NuGet.sln" -o .
