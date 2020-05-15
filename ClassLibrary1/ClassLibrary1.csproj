@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp5.0</TargetFramework>
+    <RepositoryUrl>https://github.com/nexign-sandbox/garbage</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
