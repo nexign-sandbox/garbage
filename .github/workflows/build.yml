@@ -35,4 +35,4 @@ jobs:
       run: dotnet pack *.sln --no-restore -o .
       
     - name: Publish
-      run: dotnet nuget push *.nupkg
+      run: dotnet nuget push *.nupkg --skip-duplicate
