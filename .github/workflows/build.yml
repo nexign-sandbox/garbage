@@ -32,7 +32,7 @@ jobs:
       run: dotnet test --no-restore --verbosity normal
       
     - name: Pack
-      run: dotnet pack *.sln -o .
+      run: dotnet pack *.sln --no-build -o .
       
     - name: Publish
       run: dotnet nuget push *.nupkg
