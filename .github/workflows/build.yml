@@ -24,4 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Pack
-      run: dotnet pack *.nupkg -o .
+      run: dotnet ClassLibrary1/ClassLibrary1.csproj pack *.nupkg -o .
