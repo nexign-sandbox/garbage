@@ -13,15 +13,26 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
+        source-url: https://nuget.pkg.github.com/nexign-sandbox/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+                
     - name: Install dependencies
       run: dotnet restore
+      
     - name: Build
       run: dotnet build --configuration Release --no-restore
+      
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+      
     - name: Pack
-      run: dotnet pack *.sln -o .
+      run: dotnet pack *.sln --no-build -o .
+      
+    - name: Publish
+      run: dotnet nuget push *.nupkg
